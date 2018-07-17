@@ -11,4 +11,4 @@ WORKDIR /app
 
 VOLUME /app
 
-ENTRYPOINT python
+CMD python
