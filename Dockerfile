@@ -9,4 +9,4 @@ EXPOSE 80
 
 WORKDIR /app
 
-CMD python
+ENTRYPOINT python
