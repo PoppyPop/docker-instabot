@@ -1,13 +1,19 @@
 FROM python:alpine3.7
 
+
+
 RUN mkdir /app && \
 	apk add --update git tzdata && \
 	pip install -U instabot schedule && \
 	git clone https://github.com/instagrambot/instabot --recursive
 	
-EXPOSE 80
-
 WORKDIR /app
+
+ADD feed.patch .
+
+RUN patch -p0 < feed.patch
+
+EXPOSE 80
 
 VOLUME /app
 

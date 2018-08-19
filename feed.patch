@@ -1,0 +1,12 @@
+--- /usr/local/lib/python3.7/site-packages/instabot/bot/bot_get.py.orig
++++ /usr/local/lib/python3.7/site-packages/instabot/bot/bot_get.py
+@@ -43,7 +43,7 @@
+     if not self.api.get_timeline_feed():
+         self.logger.warning("Error while getting timeline feed.")
+         return []
+-    return self.filter_medias(self.api.last_json["items"], filtration)
++    return self.filter_medias(self.api.last_json["feed_items"], filtration)
+
+
+ def get_user_medias(self, user_id, filtration=True, is_comment=False):
+ 
